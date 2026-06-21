@@ -7,6 +7,7 @@ export const metadata = createPageMetadata({
   title: "Contact",
   description:
     "Contact Arozex Technologies for smart display solutions, technology services, digital transformation, and long-term support.",
+  pathname: "/contact",
 });
 
 const contactDetails = [

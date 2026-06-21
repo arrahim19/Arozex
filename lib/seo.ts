@@ -5,11 +5,10 @@ import { site, siteConfig } from "@/lib/site";
 type MetadataInput = {
   title: string;
   description: string;
-  pathname?: string;
+  pathname: string;
   type?: "website" | "article";
 };
 
-const CURRENT_ROUTE_REFERENCE = "./";
 const ABSOLUTE_URL_PATTERN = /^[a-zA-Z][a-zA-Z\d+\-.]*:/;
 
 function createMetadataImageUrl() {
@@ -54,11 +53,8 @@ export function generateCanonical(pathname: string) {
   return new URL(normalizeCanonicalPath(pathname), `${siteConfig.url}/`).toString();
 }
 
-function resolveRouteMetadataUrl(pathname?: string) {
-  return pathname ? generateCanonical(pathname) : CURRENT_ROUTE_REFERENCE;
-}
-
 export function createRootMetadata(): Metadata {
+  const routeUrl = generateCanonical("/");
   const imageUrl = createMetadataImageUrl();
 
   return {
@@ -69,12 +65,12 @@ export function createRootMetadata(): Metadata {
     },
     description: site.description,
     alternates: {
-      canonical: CURRENT_ROUTE_REFERENCE,
+      canonical: routeUrl,
     },
     openGraph: {
       title: site.name,
       description: site.description,
-      url: CURRENT_ROUTE_REFERENCE,
+      url: routeUrl,
       siteName: site.name,
       type: "website",
       images: [
@@ -92,6 +88,9 @@ export function createRootMetadata(): Metadata {
       description: site.description,
       images: [imageUrl],
     },
+    other: {
+      "twitter:url": routeUrl,
+    },
     icons: {
       icon: "/site-icon.png",
       shortcut: "/site-icon.png",
@@ -106,7 +105,7 @@ export function createPageMetadata({
   pathname,
   type,
 }: MetadataInput): Metadata {
-  const routeUrl = resolveRouteMetadataUrl(pathname);
+  const routeUrl = generateCanonical(pathname);
   const imageUrl = createMetadataImageUrl();
 
   return {
@@ -136,12 +135,8 @@ export function createPageMetadata({
       description,
       images: [imageUrl],
     },
-    ...(pathname
-      ? {
-          other: {
-            "twitter:url": routeUrl,
-          },
-        }
-      : {}),
+    other: {
+      "twitter:url": routeUrl,
+    },
   };
 }

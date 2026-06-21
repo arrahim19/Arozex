@@ -1,11 +1,11 @@
 export const siteConfig = {
   name: "Arozex Technologies",
-  url: "https://arozex.com",
+  url: "https://www.arozex.com",
 } as const;
 
 export const site = {
   ...siteConfig,
-  domain: "arozex.com",
+  domain: "www.arozex.com",
   description:
     "Arozex Technologies provides smart display and digital technology solutions that help businesses communicate better, work smarter, and grow faster.",
   ogImage: "/images/banner/Banner%20image%201.webp",

@@ -8,6 +8,7 @@ export const metadata = createPageMetadata({
   title: "Transform Your Business with Smart Display Solutions",
   description:
     "Arozex Technologies delivers high-performance smart display and technology services that help businesses stand out, communicate better, and achieve more.",
+  pathname: "/",
   type: "website",
 });
 

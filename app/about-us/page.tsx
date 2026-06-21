@@ -5,6 +5,7 @@ export const metadata = createPageMetadata({
   title: "About Us",
   description:
     "Learn about Arozex Technologies, our mission, vision, core values, and our business-first approach to digital transformation and software solutions.",
+  pathname: "/about-us",
 });
 
 const values = [

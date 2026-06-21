@@ -7,7 +7,8 @@
     "clean:dev": "node scripts/clean-next-artifacts.mjs dev",
     "clean:build": "node scripts/clean-next-artifacts.mjs build",
     "check:no-dev-server": "node scripts/check-no-dev-server.mjs",
-    "dev": "npm run check:no-dev-server && npm run clean:dev && next dev -p 3000",
+    "dev": "npm run check:no-dev-server && npm run clean:dev && next dev --turbopack -p 3000",
+    "dev:webpack": "npm run check:no-dev-server && npm run clean:dev && next dev -p 3000",
     "build": "npm run clean:build && npm run check:no-dev-server && next build",
     "start": "next start",
     "lint": "next lint"
