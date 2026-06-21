@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "clean": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/clean-next-artifacts.ps1 all",
-    "clean:dev": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/clean-next-artifacts.ps1 dev",
-    "clean:build": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/clean-next-artifacts.ps1 build",
-    "check:no-dev-server": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-no-dev-server.ps1",
-    "dev": "npm run clean:dev && next dev -p 3000",
+    "clean": "node scripts/clean-next-artifacts.mjs all",
+    "clean:dev": "node scripts/clean-next-artifacts.mjs dev",
+    "clean:build": "node scripts/clean-next-artifacts.mjs build",
+    "check:no-dev-server": "node scripts/check-no-dev-server.mjs",
+    "dev": "npm run check:no-dev-server && npm run clean:dev && next dev -p 3000",
     "build": "npm run clean:build && npm run check:no-dev-server && next build",
     "start": "next start",
     "lint": "next lint"
