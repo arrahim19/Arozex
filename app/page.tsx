@@ -5,11 +5,12 @@ import { createPageMetadata } from "@/lib/seo";
 import { siteServices } from "@/lib/site";
 
 export const metadata = createPageMetadata({
-  title: "Transform Your Business with Smart Display Solutions",
+  title: "Arozex Technologies | Smart Display & Technology Solutions",
   description:
     "Arozex Technologies delivers high-performance smart display and technology services that help businesses stand out, communicate better, and achieve more.",
   pathname: "/",
   type: "website",
+  absoluteTitle: true,
 });
 
 const serviceCards = [

@@ -7,6 +7,7 @@ type MetadataInput = {
   description: string;
   pathname: string;
   type?: "website" | "article";
+  absoluteTitle?: boolean;
 };
 
 const ABSOLUTE_URL_PATTERN = /^[a-zA-Z][a-zA-Z\d+\-.]*:/;
@@ -104,12 +105,13 @@ export function createPageMetadata({
   description,
   pathname,
   type,
+  absoluteTitle,
 }: MetadataInput): Metadata {
   const routeUrl = generateCanonical(pathname);
   const imageUrl = createMetadataImageUrl();
 
   return {
-    title,
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: {
       canonical: routeUrl,
