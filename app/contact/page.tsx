@@ -13,8 +13,8 @@ export const metadata = createPageMetadata({
 const contactDetails = [
   {
     title: "Our Office",
-    value: "House # 123, Road # 10",
-    extra: "Uttara, Dhaka-1230, Bangladesh",
+    value: site.contact.address,
+    extra: "",
     href: null,
   },
   {

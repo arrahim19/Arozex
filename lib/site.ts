@@ -13,7 +13,7 @@ export const site = {
     email: "info@arozex.com",
     phone: "09696802739",
     whatsapp: "09696802739",
-    address: "House # 123, Road # 10, Uttara, Dhaka-1230, Bangladesh",
+    address: "55 Shaheed Tajuddin Ahmed Ave, Dhaka 1212",
   },
 } as const;
 
