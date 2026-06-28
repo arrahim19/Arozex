@@ -11,8 +11,8 @@ export const site = {
   ogImage: "/images/banner/Banner%20image%201.webp",
   contact: {
     email: "info@arozex.com",
-    phone: "09696802739",
-    whatsapp: "09696802739",
+    phone: "+8801410043419",
+    whatsapp: "+8801410043419",
     address: "55 Shaheed Tajuddin Ahmed Ave, Dhaka 1212",
   },
 } as const;

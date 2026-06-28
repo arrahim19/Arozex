@@ -1,0 +1,111 @@
+import Link from "next/link";
+
+import { LedComponentsSection } from "@/components/led/LedComponentsSection";
+import { LedProductGrid } from "@/components/led/LedProductGrid";
+import { LedTechnologiesSection } from "@/components/led/LedTechnologiesSection";
+import { LedFaqSection } from "@/components/led/LedFaqSection";
+import { WhyChooseArozexSection } from "@/components/led/WhyChooseArozexSection";
+import { getLedProductPath, ledProducts } from "@/lib/led-products";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "LED Display Price in Bangladesh 2026",
+  description:
+    "Arozex Technologies offers competitive LED display price in Bangladesh with indoor LED displays, outdoor LED screens, LED billboards, video walls, and digital signage solutions.",
+  pathname: "/led-display",
+});
+
+export default function LedDisplayPage() {
+  return (
+    <>
+      <section className="mt-[10px] rounded-[10px] px-[15px] pb-14 pt-[20px] sm:pb-16">
+        <div className="w-full">
+          <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-brand-ink sm:text-5xl">
+            LED Display Price in Bangladesh 2026
+          </h1>
+          <p className="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
+            Arozex Technologies offers competitive LED display price in Bangladesh
+            with quality indoor LED displays, outdoor LED screens, LED billboards,
+            video walls, and digital signage solutions. We provide expert
+            installation, CMS setup, warranty support, and nationwide after-sales
+            service.
+          </p>
+        </div>
+      </section>
+
+      <section id="led-products" className="mt-[10px] bg-transparent pb-16 sm:pb-20">
+        <div className="w-full">
+          <LedProductGrid products={ledProducts} />
+        </div>
+      </section>
+
+      <section className="mt-[10px] rounded-[10px] px-[15px] py-10 sm:py-12">
+        <div className="w-full">
+          <div className="mb-6">
+            <h2 className="font-black tracking-tight text-brand-ink">
+              LED Display Price List in Bangladesh
+            </h2>
+            <p className="mt-3 max-w-3xl text-base leading-7 text-slate-600">
+              Compare indoor and outdoor LED display prices by product. Click a
+              product name to view details, specifications, and quotation options.
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-[10px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(8,18,37,0.07)]">
+            <div className="overflow-x-auto">
+              <table className="min-w-full border-collapse text-left text-sm">
+                <thead className="bg-brand-blue text-white">
+                  <tr>
+                    <th scope="col" className="px-4 py-4 font-bold sm:px-6">
+                      Product Name
+                    </th>
+                    <th scope="col" className="px-4 py-4 font-bold sm:px-6">
+                      Category
+                    </th>
+                    <th scope="col" className="px-4 py-4 font-bold sm:px-6">
+                      Pixel Pitch
+                    </th>
+                    <th scope="col" className="px-4 py-4 text-right font-bold sm:px-6">
+                      Price
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  {ledProducts.map((product) => (
+                    <tr key={product.slug} className="transition hover:bg-blue-50/70">
+                      <td className="px-4 py-4 font-semibold text-brand-ink sm:px-6">
+                        <Link
+                          href={getLedProductPath(product)}
+                          className="text-brand-blue underline-offset-4 hover:underline"
+                        >
+                          {product.title}
+                        </Link>
+                      </td>
+                      <td className="px-4 py-4 text-slate-600 sm:px-6">
+                        {product.category}
+                      </td>
+                      <td className="px-4 py-4 text-slate-600 sm:px-6">
+                        {product.pixelPitch}
+                      </td>
+                      <td className="whitespace-nowrap px-4 py-4 text-right font-bold text-brand-ink sm:px-6">
+                        &#2547; {product.price}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <LedComponentsSection />
+
+      <LedTechnologiesSection />
+
+      <WhyChooseArozexSection />
+
+      <LedFaqSection />
+    </>
+  );
+}

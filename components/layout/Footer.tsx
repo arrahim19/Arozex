@@ -6,7 +6,7 @@ import { legalLinks, site, siteServices } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="bg-[#040d1f] text-white">
+    <footer className="mt-[10px] bg-[#040d1f] text-white">
       <div className="container-shell grid gap-10 py-14 lg:grid-cols-[1.2fr_0.8fr_0.9fr_1fr]">
         <div className="max-w-sm">
           <Image

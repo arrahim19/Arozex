@@ -1,4 +1,4 @@
-import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
+import { Roboto } from "next/font/google";
 
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -9,15 +9,10 @@ import { createOrganizationSchema, createWebsiteSchema } from "@/lib/schema";
 
 import "./globals.css";
 
-const headingFont = Manrope({
-  subsets: ["latin"],
-  variable: "--font-heading",
-  display: "swap",
-});
-
-const bodyFont = Plus_Jakarta_Sans({
+const robotoFont = Roboto({
   subsets: ["latin"],
   variable: "--font-body",
+  weight: ["400", "500", "700", "900"],
   display: "swap",
 });
 
@@ -29,7 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`}>
+    <html
+      lang="en"
+      className={robotoFont.variable}
+      suppressHydrationWarning
+    >
       <body className="font-[var(--font-body)] text-brand-ink antialiased">
         <JsonLd data={createOrganizationSchema()} />
         <JsonLd data={createWebsiteSchema()} />

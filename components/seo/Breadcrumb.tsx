@@ -27,7 +27,7 @@ export function Breadcrumb({ customLabels }: BreadcrumbProps) {
   return (
     <>
       {hideVisualBreadcrumb ? null : (
-        <div className="border-b border-brand-line/70 bg-white/90">
+        <div className="mt-[10px] border-b border-brand-line/70 bg-white/90">
           <div className="container-shell py-4">
             <nav aria-label="Breadcrumb" className="text-sm text-slate-500">
               <ol className="flex flex-wrap items-center gap-2">
