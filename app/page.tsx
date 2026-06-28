@@ -33,7 +33,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mt-[10px] rounded-[10px] px-[15px] py-10 sm:py-12">
+      <section className="mt-[10px] rounded-[10px] bg-transparent px-[15px] py-10 sm:py-12">
         <div className="mb-7">
           <h1 className="font-black tracking-tight text-brand-ink">
             Popular Product

@@ -19,12 +19,12 @@ export type LedProduct = {
 const ledProductData: LedProduct[] = [
   {
     slug: "outdoor-led-display-screen-price-in-bangladesh",
-    title: "outdoor led display screen price in bangladesh",
+    title: "Outdoor LED Display Screen Price in Bangladesh",
     category: "Outdoor",
     pixelPitch: "Outdoor LED",
     price: "2,000 - 5,500",
     image:
-      "/images/Outdoor%20LED%20Display/outdoor%20led%20display%20screen%20price%20in%20bangladesh.webp",
+      "/images/Outdoor-LED-Display/outdoor-led-display-screen-price-in-bangladesh.webp",
     shortDescription:
       "Outdoor LED display screen solution for Bangladesh with competitive pricing, installation, and support.",
     description:
@@ -47,11 +47,11 @@ const ledProductData: LedProduct[] = [
   },
   {
     slug: "p1-25-cob-indoor-led-display-screen",
-    title: "P1.25 Indoor LED Display",
+    title: "P1.25 COB Indoor LED Display Screen",
     category: "Indoor",
     pixelPitch: "P1.25",
     price: "10,500 - 15,000",
-    image: "/images/Indoor%20LED%20Display/P1.25%20COB%20indoor%20led%20display%20screen.webp",
+    image: "/images/Indoor-LED-Display/P1.25-COB-indoor-led-display-screen.webp",
     shortDescription:
       "Premium P1.25 Indoor LED Display with COB LED Display technology for ultra-clear LED Video Wall and Digital Signage projects.",
     description:
@@ -97,11 +97,11 @@ const ledProductData: LedProduct[] = [
   },
   {
     slug: "p1-86-cob-indoor-led-display-screen",
-    title: "P1.86 Indoor LED Display",
+    title: "P1.86 COB Indoor LED Display Screen",
     category: "Indoor",
     pixelPitch: "P1.86",
     price: "7,000 - 10,000",
-    image: "/images/Indoor%20LED%20Display/P1.86%20COB%20%20indoor%20LED%20display%20screen.webp",
+    image: "/images/Indoor-LED-Display/P1.86-COB-%20indoor-LED-display-screen.webp",
     shortDescription:
       "P1.86 indoor LED display with SMD1515 LED technology, high refresh rate, and smooth close-view visuals.",
     description:
@@ -143,11 +143,11 @@ const ledProductData: LedProduct[] = [
   },
   {
     slug: "p1-667-led-screen-panel",
-    title: "p1.667 led screen panel",
+    title: "P1.667 LED Screen Panel",
     category: "Indoor",
     pixelPitch: "P1.667",
     price: "8,000 - 11,500",
-    image: "/images/Indoor%20LED%20Display/p1.667%20led%20screen%20panel.webp",
+    image: "/images/Indoor-LED-Display/p1.667-led-screen-panel.webp",
     shortDescription:
       "High-resolution indoor LED screen panel for close-view display walls and detailed digital signage.",
     description:
@@ -170,11 +170,11 @@ const ledProductData: LedProduct[] = [
   },
   {
     slug: "p2-indoor-led-display-board",
-    title: "P2 Indoor LED Display",
+    title: "P2 Indoor LED Display Board",
     category: "Indoor",
     pixelPitch: "P2",
     price: "6,000 - 8,500",
-    image: "/images/Indoor%20LED%20Display/P2%20indoor%20LED%20display%20board.webp",
+    image: "/images/Indoor-LED-Display/P2-indoor-LED-display-board.webp",
     shortDescription:
       "P2 indoor LED display with SMD1515 LED technology, high pixel density, and smooth video performance.",
     description:
@@ -217,11 +217,11 @@ const ledProductData: LedProduct[] = [
   },
   {
     slug: "p2-5-indoor-led-screen-panel",
-    title: "P2.5 Indoor LED Display",
+    title: "P2.5 Indoor LED Screen Panel",
     category: "Indoor",
     pixelPitch: "P2.5",
     price: "5,000 - 7,000",
-    image: "/images/Indoor%20LED%20Display/P2.5%20indoor%20led%20screen%20panel.webp",
+    image: "/images/Indoor-LED-Display/P2.5-indoor-led-screen-panel.webp",
     shortDescription:
       "P2.5 indoor LED display with SMD2121 LED technology, stable brightness, and smooth video performance.",
     description:
@@ -263,11 +263,11 @@ const ledProductData: LedProduct[] = [
   },
   {
     slug: "p3-indoor-led-display-module",
-    title: "P3 Indoor LED Display",
+    title: "P3 Indoor LED Display Module",
     category: "Indoor",
     pixelPitch: "P3",
     price: "4,000 - 6,000",
-    image: "/images/Indoor%20LED%20Display/p3%20indoor%20led%20display%20module.webp",
+    image: "/images/Indoor-LED-Display/p3-indoor-led-display-module.webp",
     shortDescription:
       "P3 indoor LED display with SMD2121 LED technology, reliable brightness, and smooth playback.",
     description:
@@ -310,11 +310,11 @@ const ledProductData: LedProduct[] = [
   },
   {
     slug: "p1-53-indoor-cob-led-display-panel",
-    title: "p1.53 indoor COB led display panel",
+    title: "P1.53 Indoor COB LED Display Panel",
     category: "Indoor",
     pixelPitch: "P1.53",
     price: "9,000 - 13,000",
-    image: "/images/Indoor%20LED%20Display/p1.53%20indoor%20COB%20led%20display%20panel.webp",
+    image: "/images/Indoor-LED-Display/p1.53-indoor-COB-led-display-panel.webp",
     shortDescription:
       "Fine-pitch indoor COB LED display panel for detailed presentation, retail, and control room visuals.",
     description:
@@ -341,7 +341,7 @@ const ledProductData: LedProduct[] = [
     category: "Outdoor",
     pixelPitch: "P6",
     price: "2,500 - 4,000",
-    image: "/images/Outdoor%20LED%20Display/p6-led-display-screen.webp",
+    image: "/images/Outdoor-LED-Display/p6-led-display-screen.webp",
     shortDescription:
       "P6 outdoor LED display screen with SMD2727 LED technology, stable brightness, and reliable long-distance visibility.",
     description:
@@ -392,7 +392,7 @@ const ledProductData: LedProduct[] = [
     category: "Outdoor",
     pixelPitch: "P8",
     price: "2,000 - 3,500",
-    image: "/images/Outdoor%20LED%20Display/P8%20led%20display%20module.webp",
+    image: "/images/Outdoor-LED-Display/P8-led-display-module.webp",
     shortDescription:
       "P8 outdoor LED display module with SMD2727 LED technology, efficient brightness, and stable long-distance visibility.",
     description:
@@ -443,7 +443,7 @@ const ledProductData: LedProduct[] = [
     category: "Outdoor",
     pixelPitch: "P4",
     price: "3,500 - 5,500",
-    image: "/images/Outdoor%20LED%20Display/p4%20outdoor%20led%20display%20module.webp",
+    image: "/images/Outdoor-LED-Display/p4-outdoor-led-display-module.webp",
     shortDescription:
       "P4 outdoor LED display module with SMD1921 LED technology, high brightness, and reliable outdoor performance.",
     description:
@@ -494,7 +494,7 @@ const ledProductData: LedProduct[] = [
     category: "Outdoor",
     pixelPitch: "P5",
     price: "3,000 - 4,800",
-    image: "/images/Outdoor%20LED%20Display/p5%20outdoor%20led%20display%20screen.webp",
+    image: "/images/Outdoor-LED-Display/p5-outdoor-led-display-screen.webp",
     shortDescription:
       "P5 outdoor LED display screen with SMD1921 LED technology, bright output, and stable outdoor advertising performance.",
     description:
