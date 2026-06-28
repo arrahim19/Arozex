@@ -41,8 +41,22 @@ export function getBreadcrumbItems(
     return [{ name: ROUTE_LABELS["/"], href: "/" }];
   }
 
-  const segments = normalizedPath.split("/").filter(Boolean);
   const items: BreadcrumbItem[] = [{ name: ROUTE_LABELS["/"], href: "/" }];
+
+  if (normalizedPath.startsWith("/product/")) {
+    const slug = normalizedPath.split("/").filter(Boolean).at(-1) ?? "";
+
+    return [
+      ...items,
+      { name: ROUTE_LABELS["/led-display"], href: "/led-display" },
+      {
+        name: customLabels?.[normalizedPath] ?? humanizeSegment(slug),
+        href: normalizedPath,
+      },
+    ];
+  }
+
+  const segments = normalizedPath.split("/").filter(Boolean);
 
   segments.forEach((segment, index) => {
     const href = `/${segments.slice(0, index + 1).join("/")}`;
