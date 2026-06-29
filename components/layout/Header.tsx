@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { usePathname } from "next/navigation";
+import { type FormEvent, useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
+import { getLedProductPath, ledProducts, type LedProduct } from "@/lib/led-products";
 import { NAVIGATION_LINKS } from "@/lib/routes";
 import { site } from "@/lib/site";
 
@@ -55,9 +56,78 @@ function isRouteActive(pathname: string | null, href: string) {
   return normalizedPath === href;
 }
 
+function createSearchPath(query: string) {
+  const trimmedQuery = query.trim();
+
+  if (!trimmedQuery) {
+    return "/led-display/";
+  }
+
+  const params = new URLSearchParams();
+  params.set("q", trimmedQuery);
+
+  return `/led-display/?${params.toString()}`;
+}
+
+function normalizeSearchValue(value: string) {
+  return value.toLowerCase().replace(/[^\w\s.]/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function getSearchableProductText(product: LedProduct) {
+  return normalizeSearchValue(
+    [
+      product.title,
+      product.category,
+      product.pixelPitch,
+      product.shortDescription,
+      product.description,
+      ...product.features,
+      ...product.specifications.flatMap((item) => [item.label, item.value]),
+    ].join(" "),
+  );
+}
+
 export function Header() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const normalizedSearchQuery = normalizeSearchValue(searchQuery);
+  const searchResults = normalizedSearchQuery
+    ? ledProducts
+        .filter((product) => getSearchableProductText(product).includes(normalizedSearchQuery))
+        .slice(0, 6)
+    : [];
+  const shouldShowSearchResults = isSearchFocused && Boolean(normalizedSearchQuery);
+
+  useEffect(() => {
+    if (!pathname?.startsWith("/led-display")) {
+      setSearchQuery("");
+      return;
+    }
+
+    setSearchQuery(new URLSearchParams(window.location.search).get("q") ?? "");
+  }, [pathname]);
+
+  function updateSearchRoute(query: string) {
+    router.replace(createSearchPath(query), { scroll: false });
+  }
+
+  function handleSearchChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const nextQuery = event.target.value;
+
+    setSearchQuery(nextQuery);
+
+    if (pathname?.startsWith("/led-display")) {
+      updateSearchRoute(nextQuery);
+    }
+  }
+
+  function handleSearchSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    updateSearchRoute(searchQuery);
+  }
 
   return (
     <header className="sticky top-0 z-30 nav-glass backdrop-blur">
@@ -181,20 +251,69 @@ export function Header() {
               />
             </Link>
 
-            <form
-              action="/led-display"
-              role="search"
-              className="flex h-11 min-w-0 max-w-[520px] flex-1 items-center gap-3 rounded-full border border-white/25 bg-white px-4 shadow-[0_12px_32px_rgba(0,0,0,0.18)] transition focus-within:border-brand-blue focus-within:ring-4 focus-within:ring-brand-blue/20 sm:h-12 sm:px-5"
-            >
-              <SearchIcon />
-              <input
-                type="search"
-                name="q"
-                aria-label="Search LED displays"
-                placeholder="Search"
-                className="min-w-0 flex-1 bg-transparent text-sm font-medium text-brand-ink outline-none placeholder:text-slate-400"
-              />
-            </form>
+            <div className="relative min-w-0 max-w-[520px] flex-1">
+              <form
+                action="/led-display"
+                onSubmit={handleSearchSubmit}
+                role="search"
+                className="flex h-11 min-w-0 items-center gap-3 rounded-full border border-white/25 bg-white px-4 shadow-[0_12px_32px_rgba(0,0,0,0.18)] transition focus-within:border-brand-blue focus-within:ring-4 focus-within:ring-brand-blue/20 sm:h-12 sm:px-5"
+              >
+                <button
+                  type="submit"
+                  aria-label="Submit search"
+                  className="flex shrink-0 items-center justify-center"
+                >
+                  <SearchIcon />
+                </button>
+                <input
+                  type="search"
+                  name="q"
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  onFocus={() => setIsSearchFocused(true)}
+                  onBlur={() => window.setTimeout(() => setIsSearchFocused(false), 120)}
+                  aria-label="Search LED displays"
+                  aria-expanded={shouldShowSearchResults}
+                  aria-controls="site-search-results"
+                  placeholder="Search"
+                  className="min-w-0 flex-1 bg-transparent text-sm font-medium text-brand-ink outline-none placeholder:text-slate-400"
+                />
+              </form>
+
+              {shouldShowSearchResults ? (
+                <div
+                  id="site-search-results"
+                  className="absolute left-0 top-[calc(100%+10px)] z-50 w-full overflow-hidden rounded-[10px] border border-slate-200 bg-white shadow-[0_18px_44px_rgba(8,18,37,0.18)]"
+                >
+                  {searchResults.length ? (
+                    <div className="max-h-[360px] overflow-y-auto py-2">
+                      {searchResults.map((product) => (
+                        <Link
+                          key={product.slug}
+                          href={getLedProductPath(product)}
+                          onClick={() => {
+                            setSearchQuery("");
+                            setIsSearchFocused(false);
+                          }}
+                          className="block px-4 py-3 transition hover:bg-blue-50"
+                        >
+                          <span className="block text-sm font-semibold leading-5 text-brand-ink">
+                            {product.title}
+                          </span>
+                          <span className="mt-1 block text-xs font-medium text-brand-blue">
+                            {product.category} LED Display - &#2547; {product.price}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="px-4 py-4 text-sm font-semibold text-slate-600">
+                      No products found.
+                    </div>
+                  )}
+                </div>
+              ) : null}
+            </div>
           </div>
 
           <nav aria-label="Primary navigation" className="hidden h-12 items-center gap-7 lg:flex xl:gap-10">
