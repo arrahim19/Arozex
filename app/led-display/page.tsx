@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 import { LedComponentsSection } from "@/components/led/LedComponentsSection";
+import { LedBenefitsSection } from "@/components/led/LedBenefitsSection";
+import { IndoorOutdoorComparisonSection } from "@/components/led/IndoorOutdoorComparisonSection";
 import { LedProductGrid } from "@/components/led/LedProductGrid";
 import { LedTechnologiesSection } from "@/components/led/LedTechnologiesSection";
 import { LedFaqSection } from "@/components/led/LedFaqSection";
@@ -11,7 +13,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "LED Display Price in Bangladesh 2026",
   description:
-    "Arozex Technologies offers competitive LED display price in Bangladesh with indoor LED displays, outdoor LED screens, LED billboards, video walls, and digital signage solutions.",
+    "LED Display Price in Bangladesh from Arozex. Explore indoor & outdoor LED screens, video walls, expert installation, competitive prices & warranties.",
   pathname: "/led-display",
 });
 
@@ -45,27 +47,22 @@ export default function LedDisplayPage() {
             <h2 className="font-black tracking-tight text-brand-ink">
               LED Display Price List in Bangladesh
             </h2>
-            <p className="mt-3 max-w-3xl text-base leading-7 text-slate-600">
-              Compare indoor and outdoor LED display prices by product. Click a
-              product name to view details, specifications, and quotation options.
+            <p className="mt-3 w-full text-base leading-7 text-slate-600">
+              Explore the latest LED display price in Bangladesh, compare indoor
+              and outdoor LED display models, specifications, pixel pitch, and
+              pricing to choose the ideal solution for your business.
             </p>
           </div>
 
           <div className="overflow-hidden rounded-[10px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(8,18,37,0.07)]">
-            <div className="overflow-x-auto">
-              <table className="min-w-full border-collapse text-left text-sm">
+            <div className="w-full">
+              <table className="w-full table-fixed border-collapse text-left text-sm">
                 <thead className="bg-brand-blue text-white">
                   <tr>
-                    <th scope="col" className="px-4 py-4 font-bold sm:px-6">
+                    <th scope="col" className="w-[68%] px-4 py-4 font-bold sm:px-6">
                       Product Name
                     </th>
-                    <th scope="col" className="px-4 py-4 font-bold sm:px-6">
-                      Category
-                    </th>
-                    <th scope="col" className="px-4 py-4 font-bold sm:px-6">
-                      Pixel Pitch
-                    </th>
-                    <th scope="col" className="px-4 py-4 text-right font-bold sm:px-6">
+                    <th scope="col" className="w-[32%] px-4 py-4 text-right font-bold sm:px-6">
                       Price
                     </th>
                   </tr>
@@ -73,7 +70,7 @@ export default function LedDisplayPage() {
                 <tbody className="divide-y divide-slate-100">
                   {ledProducts.map((product) => (
                     <tr key={product.slug} className="transition hover:bg-blue-50/70">
-                      <td className="px-4 py-4 font-semibold text-brand-ink sm:px-6">
+                      <td className="break-words px-4 py-4 font-semibold text-brand-ink sm:px-6">
                         <Link
                           href={getLedProductPath(product)}
                           className="text-brand-blue underline-offset-4 hover:underline"
@@ -81,13 +78,7 @@ export default function LedDisplayPage() {
                           {product.title}
                         </Link>
                       </td>
-                      <td className="px-4 py-4 text-slate-600 sm:px-6">
-                        {product.category}
-                      </td>
-                      <td className="px-4 py-4 text-slate-600 sm:px-6">
-                        {product.pixelPitch}
-                      </td>
-                      <td className="whitespace-nowrap px-4 py-4 text-right font-bold text-brand-ink sm:px-6">
+                      <td className="px-4 py-4 text-right font-bold text-brand-ink sm:px-6">
                         &#2547; {product.price}
                       </td>
                     </tr>
@@ -102,6 +93,10 @@ export default function LedDisplayPage() {
       <LedComponentsSection />
 
       <LedTechnologiesSection />
+
+      <LedBenefitsSection />
+
+      <IndoorOutdoorComparisonSection />
 
       <WhyChooseArozexSection />
 

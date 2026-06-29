@@ -498,9 +498,11 @@ a {
 
 .led-benefits-section {
   margin-top: 10px;
-  padding: 48px 15px 56px;
+  padding: 52px 15px 18px;
   border-radius: 10px;
-  background: #ffffff;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%),
+    #ffffff;
   color: #081225;
 }
 
@@ -516,6 +518,34 @@ a {
   margin-top: 0;
 }
 
+.led-benefits-section__header {
+  position: relative;
+  max-width: 920px;
+  padding-left: 18px;
+}
+
+.led-benefits-section__header::before {
+  position: absolute;
+  top: 6px;
+  bottom: 8px;
+  left: 0;
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #1d4ed8, #38bdf8);
+  content: "";
+}
+
+.led-benefits-section__eyebrow {
+  display: block;
+  margin-bottom: 12px;
+  color: #1d4ed8;
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
 .led-benefits-section__header h2 {
   margin-bottom: 16px;
   color: #081225;
@@ -525,257 +555,391 @@ a {
 
 .led-benefits-section__header p {
   width: 100%;
-  max-width: none;
+  max-width: 840px;
   margin-bottom: 0;
   color: #475569;
-  font-size: 1rem;
-  line-height: 1.85;
+  font-size: 1.03rem;
+  line-height: 1.9;
 }
 
-.led-benefits-section__value-panel {
+.led-benefits-section__article {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0;
-  margin-top: 34px;
-  overflow: hidden;
-  border: 1px solid #dbe7f6;
-  border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 18px 45px rgba(8, 18, 37, 0.075);
-}
-
-.led-benefits-section__lead {
-  position: relative;
-  padding: 28px;
-  background:
-    linear-gradient(135deg, rgba(29, 78, 216, 0.1), rgba(239, 246, 255, 0.96)),
-    #f8fbff;
-}
-
-.led-benefits-section__lead::after {
-  position: absolute;
-  right: 28px;
-  bottom: 28px;
-  width: 88px;
-  height: 88px;
-  border: 1px solid rgba(29, 78, 216, 0.16);
-  border-radius: 999px;
-  content: "";
-}
-
-.led-benefits-section__lead-mark {
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 16px;
-  border-radius: 999px;
-  background: #1d4ed8;
-  padding: 7px 12px;
-  color: #ffffff;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.led-benefits-section__lead h3 {
-  max-width: 520px;
-  margin-bottom: 14px;
-  color: #081225;
-  font-weight: 900;
-  letter-spacing: 0;
-}
-
-.led-benefits-section__lead p {
-  max-width: 560px;
-  margin-bottom: 0;
-  color: #475569;
-  font-size: 1rem;
-  line-height: 1.78;
-}
-
-.led-benefits-section__list {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.led-benefits-section__item {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto auto minmax(0, 1fr);
-  gap: 16px;
   align-items: start;
-  padding: 24px;
-  border-top: 1px solid #e6edf8;
-  background: #ffffff;
+  gap: 10px;
+  margin-top: 38px;
+}
+
+.led-benefits-section__entry {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  border: 1px solid #dbe7f6;
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%),
+    #ffffff;
+  padding: 22px;
+  box-shadow: 0 18px 40px rgba(8, 18, 37, 0.07);
   transition:
-    background-color 220ms ease,
+    border-color 220ms ease,
     box-shadow 220ms ease,
     transform 220ms ease;
 }
 
-.led-benefits-section__item:hover {
-  z-index: 1;
-  background: #f8fbff;
-  box-shadow: 0 18px 36px rgba(8, 18, 37, 0.08);
-  transform: translateY(-3px);
+.led-benefits-section__entry::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, #1d4ed8, #38bdf8);
+  content: "";
 }
 
-.led-benefits-section__number {
+.led-benefits-section__entry:hover {
+  border-color: rgba(29, 78, 216, 0.38);
+  box-shadow: 0 24px 52px rgba(8, 18, 37, 0.11);
+  transform: translateY(-4px);
+}
+
+.led-benefits-section__entry-number {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  background: #081225;
-  color: #ffffff;
-  font-size: 0.78rem;
-  font-weight: 850;
-  line-height: 1;
-}
-
-.led-benefits-section__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 18px;
+  border-radius: 10px;
   background: #eff6ff;
   color: #1d4ed8;
+  font-size: 0.86rem;
+  font-weight: 900;
+  line-height: 1;
   box-shadow: inset 0 0 0 1px rgba(29, 78, 216, 0.14);
 }
 
-.led-benefits-section__item h3 {
-  margin-bottom: 9px;
-  color: #081225;
-  font-weight: 850;
-  letter-spacing: 0;
-}
-
-.led-benefits-section__item p {
-  margin-bottom: 0;
-  color: #526174;
-  font-size: 0.96rem;
-  line-height: 1.74;
-}
-
-.led-benefits-section__highlight {
-  margin-top: 28px;
-  padding: 28px;
-  border: 1px solid #dbe7f6;
-  border-radius: 16px;
-  background:
-    linear-gradient(180deg, rgba(239, 246, 255, 0.92), rgba(255, 255, 255, 0.98)),
-    #ffffff;
-  box-shadow: 0 18px 45px rgba(8, 18, 37, 0.08);
-}
-
-.led-benefits-section__highlight h3 {
-  margin-bottom: 14px;
+.led-benefits-section__entry h3 {
+  margin-bottom: 12px;
   color: #081225;
   font-weight: 900;
   letter-spacing: 0;
 }
 
-.led-benefits-section__highlight p {
-  width: 100%;
-  max-width: none;
+.led-benefits-section__entry p {
   margin-bottom: 0;
   color: #475569;
-  font-size: 1rem;
-  line-height: 1.85;
+  font-size: 0.96rem;
+  line-height: 1.78;
 }
 
-.led-benefits-section__points {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 22px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.led-benefits-section__points li {
-  display: inline-flex;
-  align-items: center;
-  border: 1px solid rgba(29, 78, 216, 0.2);
-  border-radius: 999px;
-  background: #ffffff;
-  padding: 9px 13px;
+.led-benefits-section__entry strong {
   color: #0f2857;
-  font-size: 0.92rem;
-  font-weight: 750;
-  line-height: 1.3;
-  box-shadow: 0 10px 24px rgba(8, 18, 37, 0.045);
-}
-
-@media (min-width: 720px) {
-  .led-benefits-section__list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .led-benefits-section__item {
-    border-right: 1px solid #e6edf8;
-  }
-
-  .led-benefits-section__item:nth-child(2n) {
-    border-right: 0;
-  }
+  font-weight: 850;
 }
 
 @media (min-width: 1120px) {
   .led-benefits-section {
-    padding-top: 58px;
-    padding-bottom: 64px;
+    padding-top: 64px;
+    padding-bottom: 20px;
   }
 
-  .led-benefits-section__value-panel {
-    grid-template-columns: minmax(260px, 0.42fr) minmax(0, 1fr);
-    margin-top: 42px;
+  .led-benefits-section__article {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 44px;
   }
+}
 
-  .led-benefits-section__lead {
-    min-height: 100%;
-    border-right: 1px solid #dbe7f6;
-    padding: 34px;
-  }
-
-  .led-benefits-section__item:nth-child(1),
-  .led-benefits-section__item:nth-child(2) {
-    border-top: 0;
-  }
-
-  .led-benefits-section__highlight {
-    padding: 34px;
+@media (min-width: 720px) and (max-width: 1119px) {
+  .led-benefits-section__article {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 560px) {
-  .led-benefits-section__lead,
-  .led-benefits-section__item,
-  .led-benefits-section__highlight {
+  .led-benefits-section {
+    padding-top: 42px;
+    padding-bottom: 18px;
+  }
+
+  .led-benefits-section__header {
+    padding-left: 14px;
+  }
+
+  .led-benefits-section__entry {
+    padding: 20px;
+  }
+}
+
+.indoor-outdoor-section {
+  margin-top: 10px;
+  padding: 54px 15px 56px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #081225;
+}
+
+.indoor-outdoor-section__inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.indoor-outdoor-section h2,
+.indoor-outdoor-section h3,
+.indoor-outdoor-section p {
+  margin-top: 0;
+}
+
+.indoor-outdoor-section__header {
+  max-width: 980px;
+  margin-bottom: 34px;
+}
+
+.indoor-outdoor-section__eyebrow {
+  display: block;
+  margin-bottom: 12px;
+  color: #1d4ed8;
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.indoor-outdoor-section__header h2 {
+  margin-bottom: 16px;
+  color: #081225;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.indoor-outdoor-section__header p {
+  max-width: 920px;
+  margin-bottom: 0;
+  color: #475569;
+  font-size: 1.03rem;
+  line-height: 1.9;
+}
+
+.indoor-outdoor-section__table-wrap {
+  overflow: hidden;
+  border: 1px solid #dbe7f6;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(8, 18, 37, 0.08);
+}
+
+.indoor-outdoor-section__table-scroll {
+  overflow-x: auto;
+}
+
+.indoor-outdoor-section__table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.94rem;
+}
+
+.indoor-outdoor-section__table th,
+.indoor-outdoor-section__table td {
+  border-bottom: 1px solid #e6edf8;
+  padding: 16px 18px;
+  vertical-align: top;
+}
+
+.indoor-outdoor-section__table thead th {
+  background: #081225;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.indoor-outdoor-section__table tbody th {
+  width: 22%;
+  color: #081225;
+  font-weight: 850;
+}
+
+.indoor-outdoor-section__table tbody td {
+  color: #475569;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.indoor-outdoor-section__table tbody tr:nth-child(even) {
+  background: #f8fbff;
+}
+
+.indoor-outdoor-section__table tbody tr:last-child th,
+.indoor-outdoor-section__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.indoor-outdoor-section__content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.indoor-outdoor-section__content-panel,
+.indoor-outdoor-section__choice,
+.indoor-outdoor-section__callout {
+  border: 1px solid #dbe7f6;
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%),
+    #ffffff;
+  box-shadow: 0 16px 38px rgba(8, 18, 37, 0.065);
+}
+
+.indoor-outdoor-section__content-panel {
+  position: relative;
+  padding: 28px;
+}
+
+.indoor-outdoor-section__content-panel::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  border-radius: 10px 0 0 10px;
+  background: linear-gradient(180deg, #1d4ed8, #38bdf8);
+  content: "";
+}
+
+.indoor-outdoor-section__content-panel h3,
+.indoor-outdoor-section__choice h3,
+.indoor-outdoor-section__callout h3 {
+  margin-bottom: 12px;
+  color: #081225;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.indoor-outdoor-section__content-panel p,
+.indoor-outdoor-section__choice p,
+.indoor-outdoor-section__callout p {
+  margin-bottom: 0;
+  color: #475569;
+  font-size: 0.98rem;
+  line-height: 1.84;
+}
+
+.indoor-outdoor-section__choice {
+  margin-top: 10px;
+  padding: 28px;
+}
+
+.indoor-outdoor-section__callout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 10px;
+  padding: 30px;
+  background:
+    linear-gradient(135deg, rgba(8, 18, 37, 0.98), rgba(15, 40, 87, 0.96)),
+    #081225;
+}
+
+.indoor-outdoor-section__callout h3,
+.indoor-outdoor-section__callout p {
+  color: #ffffff;
+}
+
+.indoor-outdoor-section__callout p {
+  color: #dbe7f6;
+}
+
+.indoor-outdoor-section__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.indoor-outdoor-section__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 0.94rem;
+  font-weight: 850;
+  line-height: 1.2;
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    transform 220ms ease;
+}
+
+.indoor-outdoor-section__button:hover {
+  transform: translateY(-2px);
+}
+
+.indoor-outdoor-section__button--primary {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+.indoor-outdoor-section__button--primary:hover {
+  background: #2563eb;
+}
+
+.indoor-outdoor-section__button--secondary {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+}
+
+.indoor-outdoor-section__button--secondary:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 900px) {
+  .indoor-outdoor-section__content-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .indoor-outdoor-section__callout {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  .indoor-outdoor-section__actions {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 1120px) {
+  .indoor-outdoor-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+@media (max-width: 560px) {
+  .indoor-outdoor-section {
+    padding-top: 42px;
+    padding-bottom: 44px;
+  }
+
+  .indoor-outdoor-section__header {
+    margin-bottom: 26px;
+  }
+
+  .indoor-outdoor-section__table th,
+  .indoor-outdoor-section__table td {
+    padding: 14px;
+  }
+
+  .indoor-outdoor-section__content-panel,
+  .indoor-outdoor-section__choice,
+  .indoor-outdoor-section__callout {
     padding: 22px;
   }
 
-  .led-benefits-section__lead::after {
-    right: 22px;
-    bottom: 22px;
-    width: 64px;
-    height: 64px;
-  }
-
-  .led-benefits-section__item {
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 14px;
-  }
-
-  .led-benefits-section__number {
-    display: none;
-  }
-
-  .led-benefits-section__points li {
+  .indoor-outdoor-section__button {
     width: 100%;
   }
 }
