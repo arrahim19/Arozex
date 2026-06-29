@@ -21,7 +21,7 @@ export default function HomePage() {
         <div className="w-full">
           <div className="overflow-hidden rounded-[1.5rem]">
             <Image
-              src="/images/banner/Banner%20image%201.webp"
+              src="/images/banner/Arozex-technologies-banner-image-1.webp"
               alt="Arozex Technologies banner"
               width={2048}
               height={684}

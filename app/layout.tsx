@@ -5,7 +5,12 @@ import { Header } from "@/components/layout/Header";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { createRootMetadata } from "@/lib/seo";
-import { createOrganizationSchema, createWebsiteSchema } from "@/lib/schema";
+import {
+  createCollectionPageSchema,
+  createLocalBusinessSchema,
+  createOrganizationSchema,
+  createWebsiteSchema,
+} from "@/lib/schema";
 
 import "./globals.css";
 
@@ -31,7 +36,9 @@ export default function RootLayout({
     >
       <body className="font-[var(--font-body)] text-brand-ink antialiased">
         <JsonLd data={createOrganizationSchema()} />
+        <JsonLd data={createLocalBusinessSchema()} />
         <JsonLd data={createWebsiteSchema()} />
+        <JsonLd data={createCollectionPageSchema()} />
         <div className="flex min-h-screen flex-col">
           <Header />
           <Breadcrumb />

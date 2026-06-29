@@ -8,7 +8,7 @@ export const site = {
   domain: "www.arozex.com",
   description:
     "Arozex Technologies provides smart display and digital technology solutions that help businesses communicate better, work smarter, and grow faster.",
-  ogImage: "/images/banner/Banner%20image%201.webp",
+  ogImage: "/images/banner/Arozex-technologies-banner-image-1.webp",
   contact: {
     email: "info@arozex.com",
     phone: "+8801410043419",
