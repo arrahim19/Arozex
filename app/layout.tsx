@@ -6,7 +6,6 @@ import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { createRootMetadata } from "@/lib/seo";
 import {
-  createCollectionPageSchema,
   createLocalBusinessSchema,
   createOrganizationSchema,
   createWebsiteSchema,
@@ -38,7 +37,6 @@ export default function RootLayout({
         <JsonLd data={createOrganizationSchema()} />
         <JsonLd data={createLocalBusinessSchema()} />
         <JsonLd data={createWebsiteSchema()} />
-        <JsonLd data={createCollectionPageSchema()} />
         <div className="flex min-h-screen flex-col">
           <Header />
           <Breadcrumb />

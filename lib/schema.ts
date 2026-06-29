@@ -1,6 +1,4 @@
 import { getBreadcrumbItems } from "@/lib/breadcrumbs";
-import { getLedProductPath, ledProducts } from "@/lib/led-products";
-import { ROUTE_LABELS, STATIC_ROUTES } from "@/lib/routes";
 import { generateCanonical } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -59,41 +57,6 @@ export function createWebsiteSchema() {
     description: site.description,
     publisher: {
       "@id": `${generateCanonical("/")}#organization`,
-    },
-  };
-}
-
-export function createCollectionPageSchema() {
-  const routeItems = STATIC_ROUTES.map((href) => ({
-    name: ROUTE_LABELS[href],
-    url: generateCanonical(href),
-  }));
-  const productItems = ledProducts.map((product) => ({
-    name: product.title,
-    url: generateCanonical(getLedProductPath(product)),
-  }));
-
-  return {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "@id": `${generateCanonical("/")}#collectionpage`,
-    name: `${site.name} Website Collection`,
-    url: generateCanonical("/"),
-    description: site.description,
-    isPartOf: {
-      "@id": `${generateCanonical("/")}#website`,
-    },
-    about: {
-      "@id": `${generateCanonical("/")}#localbusiness`,
-    },
-    mainEntity: {
-      "@type": "ItemList",
-      itemListElement: [...routeItems, ...productItems].map((item, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        name: item.name,
-        url: item.url,
-      })),
     },
   };
 }

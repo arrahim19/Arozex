@@ -7,6 +7,7 @@ import { LedProductGrid } from "@/components/led/LedProductGrid";
 import { LedTechnologiesSection } from "@/components/led/LedTechnologiesSection";
 import { LedFaqSection } from "@/components/led/LedFaqSection";
 import { WhyChooseArozexSection } from "@/components/led/WhyChooseArozexSection";
+import { CollectionPageSchema } from "@/components/seo/CollectionPageSchema";
 import { getLedProductPath, ledProducts } from "@/lib/led-products";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -20,6 +21,16 @@ export const metadata = createPageMetadata({
 export default function LedDisplayPage() {
   return (
     <>
+      <CollectionPageSchema
+        name="LED Display Price in Bangladesh 2026"
+        url="https://www.arozex.com/led-display/"
+        description="LED Display Price in Bangladesh from Arozex. Explore indoor & outdoor LED screens, video walls, expert installation, competitive prices & warranties."
+        itemList={ledProducts.map((product) => ({
+          name: product.title,
+          url: `https://www.arozex.com/product/${product.slug}/`,
+        }))}
+      />
+
       <section className="mt-[10px] rounded-[10px] px-[15px] pb-14 pt-[20px] sm:pb-16">
         <div className="w-full">
           <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-brand-ink sm:text-5xl">
