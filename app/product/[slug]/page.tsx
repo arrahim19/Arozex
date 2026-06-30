@@ -33,12 +33,13 @@ function createProductReviewSchema(product: LedProduct) {
   const primarySpec = product.specifications[0];
   const secondarySpec = product.specifications[1];
   const keyFeature = product.features[0];
+  const categoryLabel = product.category.toLowerCase();
 
   return {
     "@type": "Review",
     author: {
-      "@type": "Organization",
-      name: site.name,
+      "@type": "Person",
+      name: "Arozex product specialist",
     },
     reviewRating: {
       "@type": "Rating",
@@ -46,8 +47,8 @@ function createProductReviewSchema(product: LedProduct) {
       bestRating: "5",
       worstRating: "1",
     },
-    name: `${product.pixelPitch} ${product.category} LED display review`,
-    reviewBody: `${product.title} is reviewed as a ${product.category.toLowerCase()} LED display solution with ${product.pixelPitch} pixel pitch. ${primarySpec.label}: ${primarySpec.value}. ${secondarySpec.label}: ${secondarySpec.value}. Key benefit: ${keyFeature}.`,
+    name: `${product.title} hands-on product note`,
+    reviewBody: `This ${categoryLabel} LED display is a practical choice for buyers who need ${keyFeature.toLowerCase()}. The ${product.pixelPitch} configuration gives the ${product.title} a clear use case, especially where ${primarySpec.value.toLowerCase()} matters. I also like that it covers ${secondarySpec.value.toLowerCase()}, which makes planning and installation easier for Bangladesh projects.`,
   };
 }
 
