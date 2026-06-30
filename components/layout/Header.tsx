@@ -273,7 +273,6 @@ export function Header() {
                   onFocus={() => setIsSearchFocused(true)}
                   onBlur={() => window.setTimeout(() => setIsSearchFocused(false), 120)}
                   aria-label="Search LED displays"
-                  aria-expanded={shouldShowSearchResults}
                   aria-controls="site-search-results"
                   placeholder="Search"
                   className="min-w-0 flex-1 bg-transparent text-sm font-medium text-brand-ink outline-none placeholder:text-slate-400"

@@ -74,7 +74,7 @@ function ProductListings({
             <LedProductGrid products={visibleProducts} />
           ) : (
             <div className="rounded-[10px] border border-slate-200 bg-white p-8 text-center text-base font-semibold text-slate-600 shadow-[0_18px_45px_rgba(8,18,37,0.07)]">
-              No LED display products found for "{rawSearchQuery}".
+              No LED display products found for &quot;{rawSearchQuery}&quot;.
             </div>
           )}
         </div>
