@@ -29,6 +29,28 @@ function cleanSchemaPrice(price: string) {
   return firstPrice[0].replace(/,/g, "");
 }
 
+function createProductReviewSchema(product: LedProduct) {
+  const primarySpec = product.specifications[0];
+  const secondarySpec = product.specifications[1];
+  const keyFeature = product.features[0];
+
+  return {
+    "@type": "Review",
+    author: {
+      "@type": "Organization",
+      name: site.name,
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "5",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    name: `${product.pixelPitch} ${product.category} LED display review`,
+    reviewBody: `${product.title} is reviewed as a ${product.category.toLowerCase()} LED display solution with ${product.pixelPitch} pixel pitch. ${primarySpec.label}: ${primarySpec.value}. ${secondarySpec.label}: ${secondarySpec.value}. Key benefit: ${keyFeature}.`,
+  };
+}
+
 export function generateStaticParams() {
   return ledProducts.map((product) => ({
     slug: product.slug,
@@ -119,21 +141,7 @@ function createProductSchema(product: LedProduct) {
       ratingCount: "1",
       reviewCount: "1",
     },
-    review: {
-      "@type": "Review",
-      author: {
-        "@type": "Organization",
-        name: site.name,
-      },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-        bestRating: "5",
-        worstRating: "1",
-      },
-      name: `${product.title} product review`,
-      reviewBody: `${product.title} is supplied by ${site.name} with product consultation, installation support, and after-sales service in Bangladesh.`,
-    },
+    review: createProductReviewSchema(product),
     additionalProperty: product.specifications.map((spec) => ({
       "@type": "PropertyValue",
       name: spec.label,
