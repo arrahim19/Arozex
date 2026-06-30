@@ -23,10 +23,6 @@ export default function LedDisplayPage() {
         name="LED Display Price in Bangladesh 2026"
         url="https://www.arozex.com/led-display/"
         description="LED Display Price in Bangladesh from Arozex. Explore indoor & outdoor LED screens, video walls, expert installation, competitive prices & warranties."
-        itemList={ledProducts.map((product) => ({
-          name: product.title,
-          url: `https://www.arozex.com/product/${product.slug}/`,
-        }))}
       />
 
       <section className="mt-[10px] rounded-[10px] px-[15px] pb-14 pt-[20px] sm:pb-16">

@@ -9,11 +9,6 @@ type FaqItem = {
 
 const faqItems: FaqItem[] = [
   {
-    question: "What is an LED Display?",
-    answer:
-      "An LED Display is a digital screen that shows videos, images, and text for Indoor LED Display, Outdoor LED Billboard, Digital Signage, and LED Video Wall use.",
-  },
-  {
     question: "What is the difference between Indoor and Outdoor LED Display?",
     answer:
       "Indoor LED Display offers high resolution for close viewing, while Outdoor LED Display provides high brightness and weather protection for billboards and advertising.",
@@ -47,6 +42,11 @@ const faqItems: FaqItem[] = [
     question: "Does an LED Display need regular maintenance?",
     answer:
       "LED Display needs basic maintenance like cleaning, stable power, and periodic inspection to ensure long-term performance for indoor and outdoor use.",
+  },
+  {
+    question: "What size LED Display do I need?",
+    answer:
+      "The ideal LED Display size depends on viewing distance, installation location, screen purpose, content type, available space, and audience size. Indoor LED Display projects usually use smaller Pixel Pitch for close viewing, so the screen can show sharper text and detailed visuals. Outdoor LED Display solutions are designed for longer viewing distances, higher brightness, and larger audiences. LED Display Price in Bangladesh can also change based on screen size, module quantity, and installation requirements. For the best screen size and specifications, consult an LED display expert before finalizing your project.",
   },
   {
     question: "How do I choose the right LED Display?",

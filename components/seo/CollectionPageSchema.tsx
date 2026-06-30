@@ -6,10 +6,6 @@ type CollectionPageSchemaProps = {
   name: string;
   url: string;
   description: string;
-  itemList?: {
-    name: string;
-    url: string;
-  }[];
 };
 
 const MAX_ABOUT_TOPICS = 8;
@@ -133,7 +129,6 @@ export function CollectionPageSchema({
   name,
   url,
   description,
-  itemList,
 }: CollectionPageSchemaProps) {
   const aboutTopics = createAboutTopics({ name, url, description });
   const schema: Record<string, unknown> = {
@@ -151,18 +146,6 @@ export function CollectionPageSchema({
       name: topic,
     })),
   };
-
-  if (itemList?.length) {
-    schema.mainEntity = {
-      "@type": "ItemList",
-      itemListElement: itemList.map((item, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        name: item.name,
-        url: item.url,
-      })),
-    };
-  }
 
   return <JsonLd data={schema} />;
 }

@@ -3,54 +3,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { LedProductGrid } from "@/components/led/LedProductGrid";
-import { JsonLd } from "@/components/seo/JsonLd";
 import {
   getLedProductBySlug,
   getLedProductPath,
   ledProducts,
-  type LedProduct,
 } from "@/lib/led-products";
-import { createPageMetadata, generateCanonical } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { createPageMetadata } from "@/lib/seo";
 
 type ProductPageProps = {
   params: Promise<{
     slug: string;
   }>;
 };
-
-function cleanSchemaPrice(price: string) {
-  const firstPrice = price.match(/\d[\d,]*(?:\.\d+)?/);
-
-  if (!firstPrice) {
-    return price.replace(/[^\d.]/g, "");
-  }
-
-  return firstPrice[0].replace(/,/g, "");
-}
-
-function createProductReviewSchema(product: LedProduct) {
-  const primarySpec = product.specifications[0];
-  const secondarySpec = product.specifications[1];
-  const keyFeature = product.features[0];
-  const categoryLabel = product.category.toLowerCase();
-
-  return {
-    "@type": "Review",
-    author: {
-      "@type": "Person",
-      name: "Arozex product specialist",
-    },
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: "5",
-      bestRating: "5",
-      worstRating: "1",
-    },
-    name: `${product.title} hands-on product note`,
-    reviewBody: `This ${categoryLabel} LED display is a practical choice for buyers who need ${keyFeature.toLowerCase()}. The ${product.pixelPitch} configuration gives the ${product.title} a clear use case, especially where ${primarySpec.value.toLowerCase()} matters. I also like that it covers ${secondarySpec.value.toLowerCase()}, which makes planning and installation easier for Bangladesh projects.`,
-  };
-}
 
 export function generateStaticParams() {
   return ledProducts.map((product) => ({
@@ -73,74 +37,6 @@ export async function generateMetadata({ params }: ProductPageProps) {
     description: product.shortDescription,
     pathname: getLedProductPath(product),
   });
-}
-
-function createProductSchema(product: LedProduct) {
-  const productUrl = generateCanonical(getLedProductPath(product));
-
-  return {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: product.title,
-    image: new URL(product.image, `${site.url}/`).toString(),
-    description: product.shortDescription,
-    category: `${product.category} LED Display`,
-    brand: {
-      "@type": "Brand",
-      name: site.name,
-    },
-    url: productUrl,
-    offers: {
-      "@type": "Offer",
-      url: productUrl,
-      priceCurrency: "BDT",
-      price: cleanSchemaPrice(product.price),
-      availability: "https://schema.org/InStock",
-      itemCondition: "https://schema.org/NewCondition",
-      seller: {
-        "@type": "Organization",
-        name: site.name,
-      },
-      shippingDetails: {
-        "@type": "OfferShippingDetails",
-        shippingDestination: {
-          "@type": "DefinedRegion",
-          addressCountry: "BD",
-        },
-        shippingRate: {
-          "@type": "MonetaryAmount",
-          value: "0",
-          currency: "BDT",
-        },
-        deliveryTime: {
-          "@type": "ShippingDeliveryTime",
-          handlingTime: {
-            "@type": "QuantitativeValue",
-            minValue: "1",
-            maxValue: "3",
-            unitCode: "DAY",
-          },
-          transitTime: {
-            "@type": "QuantitativeValue",
-            minValue: "1",
-            maxValue: "7",
-            unitCode: "DAY",
-          },
-        },
-      },
-      hasMerchantReturnPolicy: {
-        "@type": "MerchantReturnPolicy",
-        applicableCountry: "BD",
-        returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
-      },
-    },
-    review: createProductReviewSchema(product),
-    additionalProperty: product.specifications.map((spec) => ({
-      "@type": "PropertyValue",
-      name: spec.label,
-      value: spec.value,
-    })),
-  };
 }
 
 function SectionIcon({ children }: { children: React.ReactNode }) {
@@ -169,8 +65,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <>
-      <JsonLd data={createProductSchema(product)} />
-
       <section className="mt-[10px] rounded-[10px] border border-blue-100/80 px-[15px] py-8 shadow-[0_18px_50px_rgba(8,18,37,0.06)] sm:py-10">
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div className="relative aspect-square overflow-hidden rounded-[10px]">
