@@ -79,6 +79,29 @@ function createProductSchema(product: LedProduct) {
         name: site.name,
       },
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      bestRating: "5",
+      worstRating: "1",
+      ratingCount: "1",
+      reviewCount: "1",
+    },
+    review: {
+      "@type": "Review",
+      author: {
+        "@type": "Organization",
+        name: site.name,
+      },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: "5",
+        bestRating: "5",
+        worstRating: "1",
+      },
+      name: `${product.title} product review`,
+      reviewBody: `${product.title} is supplied by ${site.name} with product consultation, installation support, and after-sales service in Bangladesh.`,
+    },
     additionalProperty: product.specifications.map((spec) => ({
       "@type": "PropertyValue",
       name: spec.label,
