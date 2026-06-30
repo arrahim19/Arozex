@@ -133,14 +133,6 @@ function createProductSchema(product: LedProduct) {
         returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
       },
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      bestRating: "5",
-      worstRating: "1",
-      ratingCount: "1",
-      reviewCount: "1",
-    },
     review: createProductReviewSchema(product),
     additionalProperty: product.specifications.map((spec) => ({
       "@type": "PropertyValue",
