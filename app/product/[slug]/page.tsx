@@ -19,6 +19,16 @@ type ProductPageProps = {
   }>;
 };
 
+function cleanSchemaPrice(price: string) {
+  const firstPrice = price.match(/\d[\d,]*(?:\.\d+)?/);
+
+  if (!firstPrice) {
+    return price.replace(/[^\d.]/g, "");
+  }
+
+  return firstPrice[0].replace(/,/g, "");
+}
+
 export function generateStaticParams() {
   return ledProducts.map((product) => ({
     slug: product.slug,
@@ -43,6 +53,8 @@ export async function generateMetadata({ params }: ProductPageProps) {
 }
 
 function createProductSchema(product: LedProduct) {
+  const productUrl = generateCanonical(getLedProductPath(product));
+
   return {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -54,7 +66,19 @@ function createProductSchema(product: LedProduct) {
       "@type": "Brand",
       name: site.name,
     },
-    url: generateCanonical(getLedProductPath(product)),
+    url: productUrl,
+    offers: {
+      "@type": "Offer",
+      url: productUrl,
+      priceCurrency: "BDT",
+      price: cleanSchemaPrice(product.price),
+      availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/NewCondition",
+      seller: {
+        "@type": "Organization",
+        name: site.name,
+      },
+    },
     additionalProperty: product.specifications.map((spec) => ({
       "@type": "PropertyValue",
       name: spec.label,
