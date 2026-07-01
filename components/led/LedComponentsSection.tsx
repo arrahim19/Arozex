@@ -14,12 +14,6 @@ type ComponentItem = {
     | "cooling";
 };
 
-type WorkflowStep = {
-  title: string;
-  description: string;
-  icon: "player" | "processor" | "control" | "receiving" | "power" | "module" | "output";
-};
-
 const componentItems: ComponentItem[] = [
   {
     title: "LED Module",
@@ -80,44 +74,6 @@ const componentItems: ComponentItem[] = [
     description:
       "Cooling fans and ventilation systems help maintain the optimal operating temperature of the LED display, extending the lifespan of internal components.",
     icon: "cooling",
-  },
-];
-
-const workflowSteps: WorkflowStep[] = [
-  {
-    title: "Computer / Media Player",
-    description: "Content starts from a computer, media player, or CMS software.",
-    icon: "player",
-  },
-  {
-    title: "Sending Card / Video Processor",
-    description: "Processes video input and sends synchronized display data.",
-    icon: "processor",
-  },
-  {
-    title: "LED Control System",
-    description: "Manages screen settings, brightness, playback, and configuration.",
-    icon: "control",
-  },
-  {
-    title: "Receiving Card",
-    description: "Receives signal data and distributes it to LED modules.",
-    icon: "receiving",
-  },
-  {
-    title: "Power Supply",
-    description: "Converts AC power into stable DC power for the receiving cards and LED modules.",
-    icon: "power",
-  },
-  {
-    title: "LED Modules",
-    description: "LED pixels light up to create images, videos, and text.",
-    icon: "module",
-  },
-  {
-    title: "LED Display Output",
-    description: "The final screen shows bright, smooth, and synchronized visuals.",
-    icon: "output",
   },
 ];
 
@@ -204,75 +160,12 @@ function ComponentIcon({ type }: { type: ComponentItem["icon"] }) {
   }
 }
 
-function WorkflowIcon({ type }: { type: WorkflowStep["icon"] }) {
-  const iconProps = {
-    width: "24",
-    height: "24",
-    viewBox: "0 0 24 24",
-    fill: "none",
-    xmlns: "http://www.w3.org/2000/svg",
-    "aria-hidden": true,
-    focusable: false,
-  };
-
-  switch (type) {
-    case "player":
-      return (
-        <svg {...iconProps}>
-          <path d="M4 6h16v10H4V6Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-          <path d="M9 20h6M12 16v4M10 9.5l4 2.5-4 2.5v-5Z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      );
-    case "processor":
-      return (
-        <svg {...iconProps}>
-          <path d="M7 7h10v10H7V7Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-          <path d="M9 3.5v3M15 3.5v3M9 17.5v3M15 17.5v3M3.5 9h3M3.5 15h3M17.5 9h3M17.5 15h3" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-        </svg>
-      );
-    case "control":
-      return (
-        <svg {...iconProps}>
-          <path d="M4 6h16v12H4V6Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-          <path d="M8 10h8M8 14h4M16 14h.01" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" />
-        </svg>
-      );
-    case "receiving":
-      return (
-        <svg {...iconProps}>
-          <path d="M5 8h14v9H5V8Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-          <path d="M8 12h4M16 11v3M18.5 5.5 16 8l-2.5-2.5M5.5 20.5 8 17l2.5 3.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      );
-    case "power":
-      return (
-        <svg {...iconProps}>
-          <path d="M13 3 6.5 13H12l-1 8 6.5-11H12l1-7Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-        </svg>
-      );
-    case "module":
-      return (
-        <svg {...iconProps}>
-          <path d="M5 5h14v14H5V5Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-          <path d="M8.5 8.5h2v2h-2v-2ZM13.5 8.5h2v2h-2v-2ZM8.5 13.5h2v2h-2v-2ZM13.5 13.5h2v2h-2v-2Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-        </svg>
-      );
-    case "output":
-      return (
-        <svg {...iconProps}>
-          <path d="M4 7h16v10H4V7Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-          <path d="M8 11h.01M12 11h.01M16 11h.01M8 14h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        </svg>
-      );
-  }
-}
-
 export function LedComponentsSection() {
   return (
     <section className="led-components-section" aria-labelledby="led-components-title">
       <div className="led-components-section__inner">
         <div className="led-components-section__header">
-          <h2 id="led-components-title">LED Display Components and Their Functions</h2>
+          <h2 id="led-components-title">LED Display System Components and How It Works</h2>
           <p>
             A professional LED display system consists of several essential components that work together to deliver outstanding image quality, stable performance, energy efficiency, and long-term reliability. The quality of these components directly affects the LED display&apos;s brightness, refresh rate, durability, power consumption, and overall performance. Below are the key components required to build a complete indoor or outdoor LED display solution.
           </p>
@@ -300,35 +193,6 @@ export function LedComponentsSection() {
             At Arozex Technologies, we do more than simply supply LED display products. We provide complete end-to-end LED display solutions, including professional consultation, site survey, display size planning, pixel pitch selection, genuine product supply, controller configuration, CMS software setup, professional installation, testing, calibration, operator training, 1&ndash;3 years warranty, preventive maintenance, and reliable after-sales support. Our experienced engineers ensure every LED display system is optimized for superior image quality, stable performance, and long-term reliability.
           </p>
         </aside>
-
-        <div className="led-components-section__workflow" aria-labelledby="led-component-workflow-title">
-          <div className="led-components-section__workflow-header">
-            <h3 id="led-component-workflow-title">How These Components Work Together</h3>
-            <p>
-              LED display components work together in sequence to process content,
-              transmit signals, distribute power, and produce accurate visuals on
-              the LED screen.
-            </p>
-          </div>
-
-          <ol className="led-components-section__workflow-list">
-            {workflowSteps.map((step) => (
-              <li className="led-components-section__workflow-step" key={step.title}>
-                <span className="led-components-section__workflow-icon">
-                  <WorkflowIcon type={step.icon} />
-                </span>
-                <h4>{step.title}</h4>
-                <p>{step.description}</p>
-              </li>
-            ))}
-          </ol>
-
-          <div className="led-components-section__workflow-summary">
-            Together, these components process video signals, manage power,
-            synchronize image data, and deliver stable LED display performance
-            with accurate colors and seamless visuals.
-          </div>
-        </div>
       </div>
     </section>
   );
