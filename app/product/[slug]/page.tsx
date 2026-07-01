@@ -95,6 +95,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 className="inline-flex items-center justify-center gap-3 rounded-[10px] bg-brand-blue px-6 py-4 text-base font-bold text-white shadow-[0_18px_38px_rgba(37,84,229,0.24)] transition hover:bg-brand-navy"
               >
                 <svg
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
                   className="h-5 w-5"
@@ -116,6 +118,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 className="inline-flex items-center justify-center gap-3 rounded-[10px] border border-brand-blue bg-white px-6 py-4 text-base font-bold text-brand-blue transition hover:bg-brand-blue hover:text-white"
               >
                 <svg
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
                   className="h-5 w-5"
@@ -139,6 +143,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <div className="flex items-center gap-3">
                 <SectionIcon>
                   <svg
+                    width="20"
+                    height="20"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
                     className="h-5 w-5"
@@ -158,6 +164,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   <li key={feature} className="flex items-start gap-3 text-base leading-7 text-slate-700">
                     <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-blue text-xs font-bold text-white">
                       <svg
+                        width="14"
+                        height="14"
                         viewBox="0 0 24 24"
                         aria-hidden="true"
                         className="h-3.5 w-3.5"
@@ -183,6 +191,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <div className="flex items-center gap-4">
           <SectionIcon>
             <svg
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               aria-hidden="true"
               className="h-5 w-5"
@@ -208,6 +218,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <div className="flex items-center gap-4">
           <SectionIcon>
             <svg
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               aria-hidden="true"
               className="h-5 w-5"

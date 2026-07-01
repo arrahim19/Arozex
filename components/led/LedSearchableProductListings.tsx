@@ -265,7 +265,7 @@ function ProductListings({
           <article className="led-display-explainer-card">
             <div className="led-display-explainer-card-title">
               <span className="led-display-explainer-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <path d="M5 6.5A2.5 2.5 0 0 1 7.5 4h9A2.5 2.5 0 0 1 19 6.5v8A2.5 2.5 0 0 1 16.5 17h-9A2.5 2.5 0 0 1 5 14.5v-8Z" stroke="currentColor" strokeWidth="1.8" />
                   <path d="M9 20h6M12 17v3M8.5 8.5h7M8.5 11.5h5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                 </svg>
@@ -287,7 +287,7 @@ function ProductListings({
           <article className="led-display-explainer-card">
             <div className="led-display-explainer-card-title">
               <span className="led-display-explainer-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <path d="M4.5 15.5v-8A2.5 2.5 0 0 1 7 5h10a2.5 2.5 0 0 1 2.5 2.5v8A2.5 2.5 0 0 1 17 18H7a2.5 2.5 0 0 1-2.5-2.5Z" stroke="currentColor" strokeWidth="1.8" />
                   <path d="M8 9h8M8 12h8M8 15h5M19 4l1.5-1.5M5 4 3.5 2.5M19 19.5l1.5 1.5M5 19.5 3.5 21" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                 </svg>
@@ -309,7 +309,7 @@ function ProductListings({
           <article className="led-display-explainer-card">
             <div className="led-display-explainer-card-title">
               <span className="led-display-explainer-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <path d="M4 6h7v5H4V6ZM13 6h7v5h-7V6ZM4 13h7v5H4v-5ZM13 13h7v5h-7v-5Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                   <path d="M11 8.5h2M11 15.5h2M7.5 11v2M16.5 11v2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                 </svg>
@@ -327,7 +327,7 @@ function ProductListings({
           <article className="led-display-explainer-card">
             <div className="led-display-explainer-card-title">
               <span className="led-display-explainer-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <path d="M5 5h14v10H5V5Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                   <path d="M8 19h8M12 15v4M8.5 8.5h4M8.5 11.5h7M16.5 8.5h.01" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                 </svg>
@@ -548,7 +548,7 @@ function ProductListings({
           <article className="led-price-factor-card">
             <div className="led-price-factor-card-title">
               <span className="led-price-factor-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <path d="M5 5h4v4H5V5Z" stroke="currentColor" strokeWidth="1.8" />
                   <path d="M15 5h4v4h-4V5Z" stroke="currentColor" strokeWidth="1.8" />
                   <path d="M5 15h4v4H5v-4Z" stroke="currentColor" strokeWidth="1.8" />
@@ -569,7 +569,7 @@ function ProductListings({
           <article className="led-price-factor-card">
             <div className="led-price-factor-card-title">
               <span className="led-price-factor-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <path d="M4 16.5V7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5Z" stroke="currentColor" strokeWidth="1.8" />
                   <path d="M8 9h8M8 12h8M8 15h5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                   <path d="M18.5 4.5 20 3M20 21l-1.5-1.5M4 3l1.5 1.5M5.5 19.5 4 21" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
@@ -588,7 +588,7 @@ function ProductListings({
           <article className="led-price-factor-card">
             <div className="led-price-factor-card-title">
               <span className="led-price-factor-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <path d="M5 7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7Z" stroke="currentColor" strokeWidth="1.8" />
                   <path d="M9 5v14M15 5v14M5 9h14M5 15h14" stroke="currentColor" strokeWidth="1.8" />
                 </svg>
@@ -606,7 +606,7 @@ function ProductListings({
           <article className="led-price-factor-card">
             <div className="led-price-factor-card-title">
               <span className="led-price-factor-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <path d="M12 4v2.2M12 17.8V20M4 12h2.2M17.8 12H20M6.2 6.2l1.6 1.6M16.2 16.2l1.6 1.6M17.8 6.2l-1.6 1.6M7.8 16.2l-1.6 1.6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                   <path d="M12 8.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Z" stroke="currentColor" strokeWidth="1.8" />
                 </svg>
@@ -624,7 +624,7 @@ function ProductListings({
           <article className="led-price-factor-card">
             <div className="led-price-factor-card-title">
               <span className="led-price-factor-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <path d="M8 3h8v3h3v12h-3v3H8v-3H5V6h3V3Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                   <path d="M9 9h6v6H9V9Z" stroke="currentColor" strokeWidth="1.8" />
                   <path d="M12 9v6M9 12h6" stroke="currentColor" strokeWidth="1.5" />
@@ -643,7 +643,7 @@ function ProductListings({
           <article className="led-price-factor-card">
             <div className="led-price-factor-card-title">
               <span className="led-price-factor-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <path d="M5 12a7 7 0 0 1 12.2-4.7L19 9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M19 5v4h-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M19 12a7 7 0 0 1-12.2 4.7L5 15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -663,7 +663,7 @@ function ProductListings({
           <article className="led-price-factor-card">
             <div className="led-price-factor-card-title">
               <span className="led-price-factor-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <path d="M4 20h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                   <path d="M7 20V9l5-4 5 4v11" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                   <path d="M10 20v-6h4v6M8.5 11.5h7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
@@ -682,7 +682,7 @@ function ProductListings({
           <article className="led-price-factor-card">
             <div className="led-price-factor-card-title">
               <span className="led-price-factor-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" focusable="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                   <path d="M12 3 19 6v5c0 4.5-2.9 8-7 10-4.1-2-7-5.5-7-10V6l7-3Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                   <path d="m8.8 12.2 2.1 2.1 4.5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

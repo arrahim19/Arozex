@@ -95,6 +95,8 @@ function Icon({ name }: { name: string }) {
   return (
     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue text-white shadow-[0_14px_30px_rgba(29,78,216,0.22)]">
       <svg
+        width="20"
+        height="20"
         viewBox="0 0 24 24"
         aria-hidden="true"
         className="h-5 w-5"
@@ -134,6 +136,8 @@ function LineIcon({ name }: { name: string }) {
   return (
     <span className="flex h-10 w-10 items-center justify-center text-brand-blue">
       <svg
+        width="32"
+        height="32"
         viewBox="0 0 24 24"
         aria-hidden="true"
         className="h-8 w-8"
@@ -199,6 +203,8 @@ function CheckIcon() {
   return (
     <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-blue text-white">
       <svg
+        width="12"
+        height="12"
         viewBox="0 0 24 24"
         aria-hidden="true"
         className="h-3 w-3"
@@ -329,6 +335,8 @@ export default function ContactPage() {
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-[7px] bg-brand-blue px-5 text-sm font-black text-white shadow-[0_14px_34px_rgba(29,78,216,0.2)] transition hover:-translate-y-0.5 hover:bg-brand-navy"
               >
                 <svg
+                  width="16"
+                  height="16"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
                   className="h-4 w-4"
@@ -346,6 +354,8 @@ export default function ContactPage() {
 
               <p className="mx-auto flex max-w-xl items-start justify-center gap-2 text-center text-sm leading-6 text-slate-500">
                 <svg
+                  width="16"
+                  height="16"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
                   className="mt-0.5 h-4 w-4 shrink-0 text-slate-500"
@@ -463,6 +473,8 @@ export default function ContactPage() {
 function IconSmall({ name }: { name: "phone" | "whatsapp" }) {
   return (
     <svg
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       aria-hidden="true"
       className="h-4 w-4"

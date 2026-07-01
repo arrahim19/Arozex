@@ -12,6 +12,8 @@ import { site } from "@/lib/site";
 function SearchIcon({ className = "h-4 w-4 shrink-0 text-brand-navy" }: { className?: string }) {
   return (
     <svg
+      width="24"
+      height="24"
       viewBox="0 0 24 24"
       aria-hidden="true"
       className={className}
@@ -30,6 +32,8 @@ function SearchIcon({ className = "h-4 w-4 shrink-0 text-brand-navy" }: { classN
 function PhoneIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
     <svg
+      width="24"
+      height="24"
       viewBox="0 0 24 24"
       aria-hidden="true"
       className={className}
@@ -142,6 +146,8 @@ export function Header() {
               className="flex h-11 w-11 items-center justify-center text-white"
             >
               <svg
+                width="32"
+                height="32"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
                 className="h-8 w-8"

@@ -114,6 +114,8 @@ function CheckIcon() {
   return (
     <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-blue text-white">
       <svg
+        width="14"
+        height="14"
         viewBox="0 0 24 24"
         aria-hidden="true"
         className="h-3.5 w-3.5"
@@ -140,6 +142,8 @@ function FeatureIcon({ index }: { index: number }) {
   return (
     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[10px] bg-blue-50 text-brand-blue shadow-[inset_0_0_0_1px_rgba(29,78,216,0.12)]">
       <svg
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
         aria-hidden="true"
         className="h-6 w-6"
